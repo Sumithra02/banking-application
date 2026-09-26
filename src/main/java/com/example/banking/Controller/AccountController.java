@@ -8,6 +8,7 @@ import com.example.banking.Service.AccountService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/account")
@@ -24,6 +25,11 @@ public class AccountController {
         Account savedAccount = accountService.createAccount(account);
 
         return ResponseEntity.ok(savedAccount);
+    }
+    @GetMapping
+    public ResponseEntity<List<Account>> getAllAccounts() {
+
+        return ResponseEntity.ok(accountService.getAllAccounts());
     }
     @GetMapping("/{id}")
     public ResponseEntity<Account> getAccountById(@PathVariable Long id) {
