@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Java Code Review",
+      "trigger": "PostFileSave",
+      "action": {
+        "type": "agent",
+        "prompt": "Review the saved Java file for readability, common Java mistakes, and potential issues. Do not modify the file. Report your findings only."
+      },
+      "description": "Review Java files after they are saved.",
+      "matcher": ".*\\.java$",
+      "enabled": true
+    }
+  ]
+}
